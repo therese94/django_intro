@@ -9,12 +9,35 @@ def index(request):         # 첫번째 인자는 반드시 request => 사용자
 def introduce(request):
     return render(request, 'introduce.html')
 
-def dinner(request):
+def dinner(request, name):
     menu = ['강남 더막창스', '노랑통닭', '양자강']
-    random.choice(menu)
+    pick = random.choice(menu)
     context = {
         'pick':pick,
+        'name':name,
     }
 
     # Django template으로 context전달
-    return render(request, 'dinner.html')
+    return render(request, 'dinner.html', context)
+
+def image(request):
+    context = {
+        'image' : 'https://picsum.photos/id/1002/200/300'
+    }
+    
+    return render(request, 'image.html', context)
+
+def greeting(request, name):
+    context = {
+        'name' : name
+    }
+    return render(request, 'greeting.html', context)
+
+def times(request, num1, num2):
+    result = num1 * num2
+    context = {
+        'num1' : num1,
+        'num2' : num2,
+        'result' : result
+    }
+    return render(request, 'times.html', context)

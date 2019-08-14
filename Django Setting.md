@@ -129,3 +129,23 @@ Ctrl + c 로 종료
 
 기본적으로 `localhost:8000` 에서 실행이된다.
 
+
+
+
+
+--------------------
+
+- url : times/
+  - Variable routing으로 숫자 2개를 각각 int타입으로, num1, num2이름으로 받는다.
+
+- view:
+
+```python
+def times(request, num1, num2):
+	# 두 숫자를 곱한 result변수와, num1, num2를 context에 담아서 times.html에 전달한다.
+```
+
+
+
+- template : 'times.html'
+  - 전달받은 context의 값들을 알맞게 표시한다.
