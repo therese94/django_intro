@@ -21,6 +21,7 @@ from pages import views
 # www.ssafy.com/login => views.index
 urlpatterns = [
     # path('사용자가 접속하는 경로')
+    path('template_language/', views.template_language),
     path('times/<int:num1>/<int:num2>', views.times),
     path('greeting/<str:name>/', views.greeting),
     path('image/', views.image),
