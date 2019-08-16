@@ -99,3 +99,31 @@ def lotto(request):
         'lottos' : lottos,
     }
     return render(request, 'lotto.html', context)
+
+
+def search(request):
+    return render(request, 'search.html')
+    
+def result(request):
+    query = request.GET.get('query')
+    category = request.GET.get('category')
+    context = {
+        'query': query,
+        'category': category,
+    }
+    return render(request, 'result.html', context)
+
+def lotto_pick(request):
+    
+    
+    return render(request, 'lotto_pick.html')
+
+def lotto_result(request):
+    lotto_input = sorted(list(map(int,request.GET.get('lotto_input').split())))
+    
+    lotto_ans = [21, 25, 30, 32, 40, 42]
+    context = {
+        'lotto_input' : lotto_input,
+        'lotto_ans' : lotto_ans,
+    }
+    return render(request, 'lotto_result.html', context)
