@@ -59,3 +59,43 @@ def template_language(request):
     }
 
     return render(request, 'template_language.html', context)
+
+
+def info(request):
+    
+    return render(request, 'info.html')
+
+
+def student(request, name):
+    student = {'홍길동': 28, '김길동': 28, '박길동': 28}
+    age = student[name]
+    context = {
+        'name': name,
+        'age' : age, 
+    }
+
+    return render(request, 'student.html', context)
+
+def isitBirthday(request):
+    n = datetime.now()
+    my_m = 10
+    my_d = 13
+    context= {
+        'm' : n.month,
+        'd' : n.day,
+        'my_m' : my_m,
+        'my_d' : my_d,
+
+    }
+    return render(request, 'isitBirthday.html', context)
+
+def lotto(request):
+    real_lotto = [21, 25, 30, 32, 40, 42]
+    lottos = []
+    for i in range(6):
+        lottos.append(random.randint(1,101))
+    context = {
+        'real_lotto' : real_lotto,
+        'lottos' : lottos,
+    }
+    return render(request, 'lotto.html', context)
