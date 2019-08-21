@@ -131,3 +131,13 @@ def lotto_result(request):
 
 def static_example(request):
     return render(request, 'static_example.html')
+
+def workshop_input(request):
+    return render(request, 'workshop_input.html')
+
+def workshop_result(request):
+    workshop_input = request.GET.get('workshop_input')
+    context = {
+        'workshop_input' : workshop_input,
+    }
+    return render(request, 'workshop_result.html', context)

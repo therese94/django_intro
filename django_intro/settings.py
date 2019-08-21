@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [  # 여기에 등록 꼭
     # Local apps
     'pages', 
+    'utilities',
 
     # Third party apps
 
